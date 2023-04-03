@@ -1,5 +1,5 @@
 {
-  "name": "@AbsoluteWallet/abw-multichain-sdk",
+  "name": "abw-multichain-sdk",
   "version": "1.3.0",
   "description": "Multichain Blockchain SDK by AbsoluteWallet",
   "main": "src/index.js",
