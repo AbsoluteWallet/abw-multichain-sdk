@@ -1,6 +1,6 @@
-const AbwSDK = require("../src");
-const abwDB = require("../src/database");
-const abwWC = require("../src/wconnect");
+const AbwSDK = require("abw-multichain-sdk");
+const abwDB = require("abw-multichain-sdk/lib/database");
+const abwWC = require("abw-multichain-sdk/lib/wconnect");
 
 let abwSDK;
 

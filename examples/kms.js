@@ -1,5 +1,5 @@
-const AbwSDK = require('./../src');
-const kms = require('./../src/kms');
+const AbwSDK = require('abw-multichain-sdk');
+const kms = require('abw-multichain-sdk/lib/kms');
 
 const apiUrl = process.env.API_URL;
 const apiKey = process.env.API_KEY;
