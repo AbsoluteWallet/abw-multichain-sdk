@@ -16,7 +16,6 @@
     "url": "git+https://github.com/AbsoluteWallet/abw-multichain-sdk.git"
   },
    "publishConfig": {
-    "registry":"https://npm.pkg.github.com/",
     "access": "public"
   },
   "author": "Avis",
