@@ -108,6 +108,19 @@ async function test() {
          */
         const address = await abwSDK.addressFromKey(chain, wallet.key);
         console.log(address)
+
+        /**
+         *  Decode QR code
+         */
+        const link = 'http://1.bp.blogspot.com/-Fskyl2EvIXY/UfV6GKoCkuI/AAAAAAAAALI/QgFLbAUMx0Y/s1600/qr_code.jpg';
+        let text = await abwSDK.qrCodeDecode(link);
+        console.log('Text from link:');
+        console.log(text);
+
+        const localFile = './qrcode.jpg';
+        text = await abwSDK.qrCodeDecode(localFile);
+        console.log('Text from Local file:');
+        console.log(text);
     } catch (e) {
         console.error(e.toString());
     } finally {
