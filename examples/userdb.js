@@ -62,6 +62,26 @@ async function test() {
         const us = await abwDB.getUsers({wa: user.wa});
         console.log(us);
 
+
+        /** Adding new wallets to existing user when new blockchains added to SDK*/
+        let oldUser = await abwDB.getUser(userId);
+
+        // NOTE delete some wallets for testing
+        delete oldUser.wallet['polka'];
+        delete oldUser.wallet['aptos'];
+        console.dir(oldUser);
+
+        // must get user's mnemonic from DB to generate new wallets based on it
+        const oldMnemonic = await abwDB.getWalletMnemonic(userId);
+
+        let newAllWallets = await abwSDK.generateAllWallets(oldMnemonic, oldUser);
+        console.log(newAllWallets);
+
+        oldUser.wallet = newAllWallets;
+        await abwDB.storeUser(oldUser);
+        console.dir(oldUser);
+
+
         /** Enabling/disabling active chains */
         const chains = abwDB.getUserChains(user);
         console.log(chains);
